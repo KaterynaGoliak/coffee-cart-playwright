@@ -4,7 +4,7 @@ test.use({
   viewport: { height: 620, width: 1100 }
 });
 
-test('lucky_day_option', async ({ page }) => {
+test('apply_discount_if_lucky_day_modal_appears', async ({ page }) => {
   await page.goto('https://coffee-cart.app/');
   await page.locator('[data-test="Espresso_Macchiato"]').click();
   await page.locator('[data-test="Cappuccino"]').click();
