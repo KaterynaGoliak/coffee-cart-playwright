@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('remove_item_from_cart', async ({ page }) => {
+test('user_can_remove_item_from_cart', async ({ page }) => {
   await page.goto('https://coffee-cart.app/');
 
   // Add products
