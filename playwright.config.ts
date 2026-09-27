@@ -32,12 +32,19 @@ export default defineConfig({
     video: 'retain-on-failure',
   },
 
-  /* Configure projects for major browsers */
+  /* Configure projects */
   projects: [
     {
-      name: 'chromium',
+      name: 'coffee-cart',
       use: { ...devices['Desktop Chrome'] },
+      testIgnore: /.*aria.*/,
     },
+    {
+      name: 'aria-practice',
+      use: { ...devices['Desktop Chrome'] },
+      testMatch: /.*aria.*/,
+    },
+  ],
 
     // {
     //   name: 'firefox',
@@ -68,7 +75,6 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
-  ],
 
   /* Run your local dev server before starting the tests */
   // webServer: {
