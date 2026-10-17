@@ -24,9 +24,14 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    viewport: { width: 1000, height: 620 },   // ✅ screen size for test
-
+    use: {
+    // Збільшуємо розмір екрана, щоб вмістився весь контент і нижній тотал:
+    viewport: { width: 1280, height: 720 },
+    // Уповільнюємо дії на 1 секунду (видно кожен клік):
+    launchOptions: {
+      slowMo: 1000,
+      args: ['--disable-features=Translate'], // прибирає плашку перекладача з правого кутка
+    },
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
